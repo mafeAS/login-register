@@ -1,3 +1,19 @@
 <%-include ('partials/_header.ejs')%>
+<div class="block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200 rounded-lg shadow-lg text-gray-800">
+    <form action="/login" method="post" class="mt-4">
+        <h1 class="title text-center">Login</h1>
+        <label>
+            <i class="fa-solid fa-user"></i>
+            <input  type="text" name="email" placeholder="Email" class="border border-gray-200 text-lg placeholder-gray-500 p-2 my-2">
+        </label>
+
+        <label>
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" name="password" placeholder="Password" class="border border-gray-200 text-lg placeholder-gray-500 p-2 my-2">
+        </label>
+
+        <button type="submit" class="rounded-md bg-purple-500 w-full text-lg text-white font-semibold p-2 my-3 hover:bg-purple-600 focus:bg-purple-700">Login</button>
+    </form>
+</div>
 
 <%-include ('partials/_footer.ejs')%>

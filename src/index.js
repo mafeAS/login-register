@@ -10,7 +10,7 @@ const loginRoutes=require('./router/login-register')
 
 //--------------crear APP----------------------------
 app.set('port', process.env.PORT||3000)
-app.set('view engine','ejs')
+app.set('view enginne','ejs')
 app.set('views',path.join(__dirname,'views'))
 
 
@@ -23,12 +23,17 @@ app.use(myConnetion(mysql,{
     port:3306,
     database:'loginRegister'
 },'single'))
+app.use(express.urlencoded({extended:false}))
 //-------------archivos estativos-----------------------
 app.use(express.static(path.join(__dirname,'public')))
 
 
 //--------------routes--------------------------
 app.use('/',loginRoutes)
+
+app.get('/',(req,res)=>{
+    res.render('home.ejs')
+})
 
 //---------------empezando servidor---------------------
 app.listen(app.get('port'),()=>{
